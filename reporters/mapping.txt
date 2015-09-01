@@ -1,0 +1,49 @@
+{
+  "testreport": {
+    "dynamic": "strict",
+    "properties": {
+      "timestamp": {
+        "type": "date",
+        "format": "dateOptionalTime"
+      },
+      "testCaseStart": {
+        "type": "date",
+        "format": "dateOptionalTime"
+      },
+      "testCaseEnd": {
+        "type": "date",
+        "format": "dateOptionalTime"
+      },
+      "testCaseDuration": {
+        "type": "integer"
+      },
+      "testCaseState": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string",
+        "index": "not_analyzed"
+      },
+      "harness": {
+        "type": "string"
+      },
+      "err": {
+        "type": "string"
+      },
+      "sessionId": {
+        "type": "string",
+        "index": "not_analyzed"
+      },
+      "file": {
+        "type": "string",
+        "index": "not_analyzed"
+      },
+      "duration": {
+        "type": "integer"
+      },
+      "state": {
+        "type": "string"
+      }
+    }
+  }
+}

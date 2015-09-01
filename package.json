@@ -1,0 +1,38 @@
+{
+  "author": {
+    "name": "Radim Daniel Panek",
+    "email": "rdpanek@gmail.com"
+  },
+  "name": "test-stack-reporter",
+  "description": "Reporter is part of test stack and allows send report snippets to log management solutions.",
+  "keywords": [
+    "logging",
+    "mocha",
+    "elasticsearch",
+    "report"
+  ],
+  "homepage": "https://github.com/test-stack",
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Radim Daniel Panek",
+      "email": "rdpanek@gmail.com"
+    }
+  ],
+  "version": "0.0.2",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/test-stack/reporter"
+  },
+  "bugs": {
+    "url": "https://github.com/test-stack/reporter/issues"
+  },
+  "engines": {
+    "node": "0.10.33",
+    "coffee-script": "1.9.3",
+    "npm": "2.8.3"
+  },
+  "dependencies": {
+    "elasticsearch": "8.0.1"
+  }
+}
