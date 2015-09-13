@@ -19,7 +19,7 @@
       "email": "rdpanek@gmail.com"
     }
   ],
-  "version": "0.0.2",
+  "version": "1.0.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/test-stack/reporter"
