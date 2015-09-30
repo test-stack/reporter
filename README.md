@@ -47,3 +47,45 @@ bf04464fa6b7        selenium/hub:2.46.0           /opt/bin/entry_point   29 hour
 $ service collectd status
  * collectd is running
 ```
+
+# Kibana settings
+
+Open Kibana `http://yourServerAddress:5601/`
+
+## Import Dashboards
+
+Kibana > Settings > Objects > Import [this json](https://github.com/test-stack/reporter/tree/master/kibanaObjects/dashboards.json)
+
+## Import Visualization
+
+Kibana > Settings > Objects > Import [this json](https://github.com/test-stack/reporter/tree/master/kibanaObjects/visualizations.json)
+
+## Add Script fields
+
+**For testreport index**
+
+Kibana > Settings > testreport > Script fields
+```
+name: msToS
+script: doc['testCaseDuration'].value / 1000
+```
+
+**For collectd index**
+
+Kibana > Settings > collectd > Script fields
+```
+name: MB
+script: doc['value'].value / 1000000
+
+name: cpu_value
+script: doc['value'].value / 10000000
+
+name: ms
+script: doc['value'].value / 1000
+
+name: txToKbe
+script: doc['tx'].value / 1024 / 1024
+
+name: rxToKb
+script: doc['rx'].value / 1024 / 1024
+```
