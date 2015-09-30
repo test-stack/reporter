@@ -1,8 +1,8 @@
 # Reporter
 Logging results of tests and load server with Selenium environment based on Docker.
 
-## How to run
-More information in [test-stack-docker](https://github.com/test-stack/docker#elasticsearch--kibana)
+## Infrastructure of log management
+![Infrastructure of test stack](https://raw.githubusercontent.com/test-stack/reporter/master/docs/infrastructureOfLogManagement.jpg)
 
 ## Configuration Harness
 You must add to `./config.cson` `ELASTICSEARCH: "IP_OF_ELASTICSEARCH:PORT"`
@@ -12,7 +12,7 @@ And run your [Harness](https://github.com/test-stack/harness#run) with `-R elast
 # Collectd
 [Collectd](https://collectd.org/) - The system statistics collection daemon
 
-## Collectd instalation
+## Collectd installation
 ```
 sudo apt-get update
 sudo apt-get install collectd collectd-utils
