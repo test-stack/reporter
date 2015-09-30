@@ -56,6 +56,13 @@ Open Kibana `http://yourServerAddress:5601/`
 
 Kibana > Settings > Objects > Import [this json](https://github.com/test-stack/reporter/tree/master/kibanaObjects/dashboards.json)
 
+### Server load dashboard
+![Server load dashboard](https://raw.githubusercontent.com/test-stack/reporter/master/docs/serverLoadDashboard.png)
+
+### Test results dashboard
+![Test results dashboard](https://raw.githubusercontent.com/test-stack/reporter/master/docs/testResultsDashboard.png)
+
+
 ## Import Visualization
 
 Kibana > Settings > Objects > Import [this json](https://github.com/test-stack/reporter/tree/master/kibanaObjects/visualizations.json)
