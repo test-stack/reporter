@@ -28,4 +28,22 @@ Apply changes `sudo service collectd restart`
 Create [`~/logstashConf/collectd.conf`](https://github.com/test-stack/reporter/tree/master/logstashConf/collectd.conf)
 
 ## Run Logstash
-`docker run -d -v /local/logstashConfig/directory/:/conf --name logstash -p 25826:25826/udp itzg/logstash:latest`
+`docker run -d -v /logstashConf/:/conf --name logstash -p 25826:25826/udp itzg/logstash:latest`
+
+# Running docker containers
+
+```
+$ docker ps
+
+CONTAINER ID        IMAGE                         COMMAND                CREATED             STATUS              PORTS                                 NAMES
+d638f1381344        selenium/node-chrome:2.46.0   /opt/bin/entry_point   29 hours ago        Up 29 hours                                               pensive_franklin
+bf04464fa6b7        selenium/hub:2.46.0           /opt/bin/entry_point   29 hours ago        Up 29 hours         0.0.0.0:4444->4444/tcp                pensive_franklin/hub,selenium-hub
+69549b3c871a        itzg/logstash:latest          bin/logstash agent -   12 days ago         Up 29 hours         25826/tcp, 0.0.0.0:25826->25826/udp   logstash
+```
+
+# Verify that Collectd running
+
+```
+$ service collectd status
+ * collectd is running
+```
