@@ -33,6 +33,7 @@
     "npm": "2.8.3"
   },
   "dependencies": {
-    "elasticsearch": "8.0.1"
+    "elasticsearch": "8.0.1",
+    "moment": "~2.10.6"
   }
 }
