@@ -3,18 +3,22 @@ Base = require '../mocha/lib/reporters/base'
 {ElasticSearchError} = require './libs/errors'
 
 @sessionId = null
+@runId = null
 
 send = (snippet, cb) =>
   @sessionId = snippet.sessionId if snippet.sessionId?
+  @runId = Date.now()+Math.floor Math.random() * 10000 if @runId is null
   snippet['sessionId'] = @sessionId
+  snippet['runId'] = @runId
   elastic.send snippet, (e) ->
     return new ElasticSearchError e if e
 
 reporter = (runner) ->
   self = @
   Base.call this, runner
+  testStepFailed = no
   runner.on 'suite', (suite) ->
-    if suite.file?
+    if suite.file? && !testStepFailed
       send
         title: suite.title
         file: suite.file
@@ -29,6 +33,7 @@ reporter = (runner) ->
       harness: 'testStep'
 
   runner.on 'fail', (test, testErr) ->
+    testStepFailed = yes
     send
       title: test.title
       state: test.state
