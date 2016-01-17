@@ -22,7 +22,7 @@ reporter = (runner) ->
       send
         title: suite.title
         file: suite.file
-        harness: 'loadTestContext'
+        harness: 'TestContext'
         err: null
 
   runner.on 'pass', (test) ->
@@ -30,19 +30,19 @@ reporter = (runner) ->
       title: test.title
       duration: test.duration
       state: test.state
-      harness: 'testStep'
+      harness: 'Step'
 
   runner.on 'fail', (test, testErr) ->
     testStepFailed = yes
     send
       title: test.title
       state: test.state
-      harness: 'testStep'
+      harness: 'Step'
       err: testErr.message.toString()
 
   runner.on 'end', ->
     send
-      harness: 'testEnd'
+      harness: 'teardown'
       testCaseStart: self.stats.start
       testCaseEnd: self.stats.end
       testCaseDuration: self.stats.duration
