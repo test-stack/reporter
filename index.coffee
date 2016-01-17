@@ -1,13 +1,14 @@
 elastic = require './reporters/elastic'
 Base = require '../mocha/lib/reporters/base'
+{ElasticSearchError} = require './libs/errors'
 
 @sessionId = null
 
 send = (snippet, cb) =>
   @sessionId = snippet.sessionId if snippet.sessionId?
   snippet['sessionId'] = @sessionId
-  elastic.send snippet, (e, res) ->
-    return console.error e if e
+  elastic.send snippet, (e) ->
+    return new ElasticSearchError e if e
 
 reporter = (runner) ->
   self = @
