@@ -4,12 +4,12 @@ Base = require '../mocha/lib/reporters/base'
 
 @sessionId = null
 @runId = null
+@tags = null
 
-send = (snippet, cb) =>
-  @sessionId = snippet.sessionId if snippet.sessionId?
-  @runId = Date.now()+Math.floor Math.random() * 10000 if @runId is null
-  snippet['sessionId'] = @sessionId
-  snippet['runId'] = @runId
+send = (snippet) =>
+  snippet['sessionId'] = @sessionId = if !@sessionId? then snippet.sessionId else @sessionId
+  snippet['runId'] = @runId = if !@runId? then Date.now()+Math.floor Math.random() * 10000 else @runId
+  snippet['tags'] = @tags = if !@tags? then snippet.tags else @tags
   elastic.send snippet, (e) ->
     return new ElasticSearchError e if e
 
@@ -26,6 +26,7 @@ reporter = (runner) ->
         err: null
 
   runner.on 'pass', (test) ->
+
     send
       title: test.title
       duration: test.duration
@@ -33,9 +34,11 @@ reporter = (runner) ->
       harness: 'Step'
 
   runner.on 'fail', (test, testErr) ->
+
     testStepFailed = yes
     send
       title: test.title
+      duration: test.duration
       state: test.state
       harness: 'Step'
       err: testErr.message.toString()
