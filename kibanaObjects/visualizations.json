@@ -1,222 +1,267 @@
 [
   {
-    "_id": "Failed-slash-Passed-(-Test-report-)",
+    "_id": "Response-time-by-Samples-(-smartmeter-)",
     "_type": "visualization",
     "_source": {
-      "title": "Failed / Passed ( Test report )",
-      "visState": "{\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"4\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"5\",\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"testCaseState\",\"size\":2,\"order\":\"desc\",\"orderBy\":\"1\",\"row\":true}}],\"listeners\":{}}",
+      "title": "Response time by Samples ( smartmeter )",
+      "visState": "{\"type\":\"line\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"showCircles\":true,\"smoothLines\":false,\"interpolate\":\"linear\",\"scale\":\"linear\",\"drawLinesBetweenPoints\":true,\"radiusRatio\":9,\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"ResponseTime\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"interval\":\"m\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"SampleLabel\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"title\":\"Response time by Samples ( smartmeter )\"}",
+      "uiStateJSON": "{}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"testreport\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"smartmeter-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
   {
-    "_id": "Tests-(-Test-report-)",
+    "_id": "Success-transaction-(-smartmeter-)",
     "_type": "visualization",
     "_source": {
-      "title": "Tests ( Test report )",
-      "visState": "{\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"interval\":\"m\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "title": "Success transaction ( smartmeter )",
+      "visState": "{\"type\":\"line\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"showCircles\":true,\"smoothLines\":false,\"interpolate\":\"linear\",\"scale\":\"linear\",\"drawLinesBetweenPoints\":true,\"radiusRatio\":9,\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"interval\":\"m\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"Success\",\"size\":2,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"title\":\"Success transaction ( smartmeter )\"}",
+      "uiStateJSON": "{}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"testreport\",\"query\":{\"query_string\":{\"query\":\"harness: testEnd\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"smartmeter-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
   {
-    "_id": "Memory",
+    "_id": "Status-Code-(-smartmeter-)",
     "_type": "visualization",
     "_source": {
-      "title": "Memory",
-      "visState": "{\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"value\"}},{\"id\":\"2\",\"type\":\"filters\",\"schema\":\"split\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"collectd_type: 'memory'\",\"analyze_wildcard\":true}}}}],\"row\":true}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"type_instance.raw\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "title": "Status Code ( smartmeter )",
+      "visState": "{\"type\":\"line\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"showCircles\":true,\"smoothLines\":false,\"interpolate\":\"linear\",\"scale\":\"linear\",\"drawLinesBetweenPoints\":true,\"radiusRatio\":9,\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"interval\":\"m\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"ResponseCode\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"title\":\"Status Code ( smartmeter )\"}",
+      "uiStateJSON": "{}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"logstash-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"smartmeter-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
   {
-    "_id": "Test-duration-(-max-slash-min-)-(-Test-report-)",
+    "_id": "Assertations-(-smartmeter-)",
     "_type": "visualization",
     "_source": {
-      "title": "Test duration ( max / min ) ( Test report )",
-      "visState": "{\"type\":\"line\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"showCircles\":false,\"smoothLines\":false,\"interpolate\":\"linear\",\"scale\":\"linear\",\"drawLinesBetweenPoints\":true,\"radiusRatio\":9,\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"msToS\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "title": "Assertations ( smartmeter )",
+      "visState": "{\"type\":\"table\",\"params\":{\"perPage\":null,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"Assertions.Name\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"title\":\"Assertations ( smartmeter )\"}",
+      "uiStateJSON": "{}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"testreport\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"smartmeter-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
   {
-    "_id": "Steps-duration",
+    "_id": "Errors-(-smartmeter-)",
     "_type": "visualization",
     "_source": {
-      "title": "Steps duration",
-      "visState": "{\"aggs\":[{\"id\":\"1\",\"params\":{\"field\":\"duration\"},\"schema\":\"metric\",\"type\":\"max\"},{\"id\":\"2\",\"params\":{\"field\":\"duration\",\"order\":\"desc\",\"orderBy\":\"1\",\"size\":200},\"schema\":\"group\",\"type\":\"terms\"},{\"id\":\"3\",\"params\":{\"field\":\"title\",\"order\":\"desc\",\"orderBy\":\"1\",\"row\":false,\"size\":2},\"schema\":\"split\",\"type\":\"terms\"},{\"id\":\"4\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"harness: testStep\"}}}}]},\"schema\":\"segment\",\"type\":\"filters\"}],\"listeners\":{},\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"defaultYExtents\":false,\"mode\":\"grouped\",\"scale\":\"linear\",\"setYExtents\":false,\"shareYAxis\":true,\"times\":[],\"yAxis\":{}},\"type\":\"histogram\"}",
+      "title": "Errors ( smartmeter )",
+      "visState": "{\"type\":\"metric\",\"params\":{\"fontSize\":\"30\"},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}],\"listeners\":{},\"title\":\"Errors ( smartmeter )\"}",
+      "uiStateJSON": "{}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"testreport\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"smartmeter-*\",\"query\":{\"query_string\":{\"query\":\"Success: false\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
   {
-    "_id": "Dashboards",
+    "_id": "Failure-Assertations-(-smartmeter-)",
     "_type": "visualization",
     "_source": {
-      "title": "Dashboards",
-      "visState": "{\"type\":\"markdown\",\"params\":{\"markdown\":\"# Dashboards\\n- [Test results](/#/dashboard/Test-report)\\n- [Test case](/#/dashboard/Test-case)\\n- [Server load](/#/dashboard/Load)\"},\"aggs\":[],\"listeners\":{}}",
+      "title": "Failure Assertations ( smartmeter )",
+      "visState": "{\"type\":\"table\",\"params\":{\"perPage\":null,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"Assertions.FailureMessage\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"title\":\"Failure Assertations ( smartmeter )\"}",
+      "uiStateJSON": "{}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"smartmeter-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
   {
-    "_id": "Tests-passed",
+    "_id": "Response-Code-(-smartmeter-)",
     "_type": "visualization",
     "_source": {
-      "title": "Tests passed",
-      "visState": "{\"type\":\"metric\",\"params\":{\"fontSize\":\"25\"},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}],\"listeners\":{}}",
+      "title": "Response Code ( smartmeter )",
+      "visState": "{\"type\":\"table\",\"params\":{\"perPage\":null,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"ResponseCode\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"title\":\"Response Code ( smartmeter )\"}",
+      "uiStateJSON": "{}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"testreport\",\"query\":{\"query_string\":{\"query\":\"harness: testEnd AND testCaseState: passed\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"smartmeter-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
   {
-    "_id": "Tests-failed",
+    "_id": "Response-Message-(-smartmeter-)",
     "_type": "visualization",
     "_source": {
-      "title": "Tests failed",
-      "visState": "{\"type\":\"metric\",\"params\":{\"fontSize\":\"25\"},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}],\"listeners\":{}}",
+      "title": "Response Message ( smartmeter )",
+      "visState": "{\"type\":\"table\",\"params\":{\"perPage\":null,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"ResponseMessage\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"title\":\"Response Message ( smartmeter )\"}",
+      "uiStateJSON": "{}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"testreport\",\"query\":{\"query_string\":{\"query\":\"harness: testEnd AND testCaseState: failed\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"smartmeter-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
   {
-    "_id": "Tests",
+    "_id": "Target-URL-(-smartmeter-)",
     "_type": "visualization",
     "_source": {
-      "title": "Tests",
-      "visState": "{\"type\":\"metric\",\"params\":{\"fontSize\":\"25\"},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}],\"listeners\":{}}",
+      "title": "Target URL ( smartmeter )",
+      "visState": "{\"type\":\"table\",\"params\":{\"perPage\":null,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"URL\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"title\":\"Target URL ( smartmeter )\"}",
+      "uiStateJSON": "{}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"testreport\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"harness: testEnd\"}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"smartmeter-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
   {
-    "_id": "Top-failed",
+    "_id": "Transactions-(-smartmeter-)",
     "_type": "visualization",
     "_source": {
-      "title": "Top failed",
-      "visState": "{\"type\":\"table\",\"params\":{\"perPage\":null,\"showMeticsAtAllLevels\":true,\"showPartialRows\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"err\",\"size\":300,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "title": "Transactions ( smartmeter )",
+      "visState": "{\"type\":\"metric\",\"params\":{\"fontSize\":\"30\"},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}],\"listeners\":{},\"title\":\"Transactions ( smartmeter )\"}",
+      "uiStateJSON": "{}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"testreport\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"smartmeter-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
   {
-    "_id": "Interface-(kb)",
+    "_id": "Overview-per-Samples-(-smartmeter-)",
     "_type": "visualization",
     "_source": {
-      "title": "Interface (kb)",
-      "visState": "{\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"params\": {\n        \"field\": \"rxToKb\"\n      },\n      \"schema\": \"metric\",\n      \"type\": \"max\"\n    },\n    {\n      \"id\": \"3\",\n      \"params\": {\n        \"filters\": [\n          {\n            \"input\": {\n              \"query\": {\n                \"query_string\": {\n                  \"analyze_wildcard\": true,\n                  \"query\": \"plugin: interface\"\n                }\n              }\n            }\n          }\n        ]\n      },\n      \"schema\": \"group\",\n      \"type\": \"filters\"\n    },\n    {\n      \"id\": \"4\",\n      \"params\": {\n        \"field\": \"plugin_instance\",\n        \"order\": \"desc\",\n        \"orderBy\": \"1\",\n        \"row\": true,\n        \"size\": 5\n      },\n      \"schema\": \"split\",\n      \"type\": \"terms\"\n    },\n    {\n      \"id\": \"6\",\n      \"params\": {\n        \"customInterval\": \"2h\",\n        \"extended_bounds\": {},\n        \"field\": \"@timestamp\",\n        \"interval\": \"auto\",\n        \"min_doc_count\": 1\n      },\n      \"schema\": \"segment\",\n      \"type\": \"date_histogram\"\n    },\n    {\n      \"id\": \"7\",\n      \"params\": {\n        \"field\": \"txToKbe\"\n      },\n      \"schema\": \"metric\",\n      \"type\": \"max\"\n    }\n  ],\n  \"listeners\": {},\n  \"params\": {\n    \"addLegend\": true,\n    \"addTimeMarker\": false,\n    \"addTooltip\": true,\n    \"defaultYExtents\": false,\n    \"drawLinesBetweenPoints\": true,\n    \"interpolate\": \"linear\",\n    \"radiusRatio\": \"1\",\n    \"scale\": \"linear\",\n    \"setYExtents\": false,\n    \"shareYAxis\": true,\n    \"showCircles\": false,\n    \"smoothLines\": false,\n    \"times\": [],\n    \"yAxis\": {}\n  },\n  \"type\": \"line\"\n}",
+      "title": "Overview per Samples ( smartmeter )",
+      "visState": "{\"type\":\"table\",\"params\":{\"perPage\":null,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"SampleLabel\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"3\",\"type\":\"min\",\"schema\":\"metric\",\"params\":{\"field\":\"ResponseTime\"}},{\"id\":\"4\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"ResponseTime\"}},{\"id\":\"5\",\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"ResponseTime\"}},{\"id\":\"6\",\"type\":\"percentiles\",\"schema\":\"metric\",\"params\":{\"field\":\"ResponseTime\",\"percents\":[30,50,70,90]}},{\"id\":\"7\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"ErrorCount\"}}],\"listeners\":{},\"title\":\"Overview per Samples ( smartmeter )\"}",
+      "uiStateJSON": "{}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\n  \"index\": \"collectd*\",\n  \"query\": {\n    \"query_string\": {\n      \"analyze_wildcard\": true,\n      \"query\": \"*\"\n    }\n  },\n  \"filter\": []\n}"
+        "searchSourceJSON": "{\"index\":\"smartmeter-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
   {
-    "_id": "CPU",
+    "_id": "Steps-(-testreport-)",
     "_type": "visualization",
     "_source": {
-      "title": "CPU",
-      "visState": "{\n  \"type\": \"line\",\n  \"params\": {\n    \"addLegend\": true,\n    \"addTimeMarker\": false,\n    \"addTooltip\": true,\n    \"defaultYExtents\": false,\n    \"drawLinesBetweenPoints\": true,\n    \"interpolate\": \"linear\",\n    \"radiusRatio\": 9,\n    \"scale\": \"linear\",\n    \"setYExtents\": false,\n    \"shareYAxis\": true,\n    \"showCircles\": false,\n    \"smoothLines\": false,\n    \"times\": [],\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"avg\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"cpu_value\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"@timestamp\",\n        \"interval\": \"s\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"type\": \"terms\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"field\": \"type_instance\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    },\n    {\n      \"id\": \"4\",\n      \"type\": \"terms\",\n      \"schema\": \"split\",\n      \"params\": {\n        \"field\": \"plugin_instance\",\n        \"size\": 5,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\",\n        \"row\": true\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "title": "Steps ( testreport )",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"table\",\"params\":{\"perPage\":null,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"title\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Step name\"}},{\"id\":\"3\",\"type\":\"min\",\"schema\":\"metric\",\"params\":{\"field\":\"duration\",\"customLabel\":\"Min duration\"}},{\"id\":\"4\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"duration\",\"customLabel\":\"Avg duration\"}},{\"id\":\"5\",\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"duration\",\"customLabel\":\"Max duration\"}},{\"id\":\"6\",\"type\":\"percentiles\",\"schema\":\"metric\",\"params\":{\"field\":\"duration\",\"percents\":[30,50,70,90],\"customLabel\":\"%th duration (ms)\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\n  \"index\": \"collectd*\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"plugin: \\\"cpu\\\"\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+        "searchSourceJSON": "{\"index\":\"testreport-*\",\"query\":{\"query_string\":{\"query\":\"harness: step\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
   {
-    "_id": "DF-(MB)",
+    "_id": "Passed-slash-Failed-TC-(-testreport-)",
     "_type": "visualization",
     "_source": {
-      "title": "DF (MB)",
-      "visState": "{\n  \"type\": \"line\",\n  \"params\": {\n    \"addLegend\": true,\n    \"addTimeMarker\": false,\n    \"addTooltip\": true,\n    \"defaultYExtents\": false,\n    \"drawLinesBetweenPoints\": true,\n    \"interpolate\": \"linear\",\n    \"radiusRatio\": 9,\n    \"scale\": \"linear\",\n    \"setYExtents\": false,\n    \"shareYAxis\": true,\n    \"showCircles\": false,\n    \"smoothLines\": false,\n    \"times\": [],\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"max\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"MB\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"@timestamp\",\n        \"interval\": \"s\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"type\": \"terms\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"field\": \"type_instance\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    },\n    {\n      \"id\": \"4\",\n      \"type\": \"terms\",\n      \"schema\": \"split\",\n      \"params\": {\n        \"field\": \"plugin_instance\",\n        \"size\": 5,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\",\n        \"row\": true\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "title": "Passed / Failed TC ( testreport )",
+      "visState": "{\"title\":\"Passed / Failed TC ( testreport )\",\"type\":\"histogram\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"defaultYExtents\":false,\"mode\":\"stacked\",\"scale\":\"linear\",\"setYExtents\":false,\"shareYAxis\":true,\"times\":[],\"yAxis\":{\"max\":0.8,\"min\":0.1}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"interval\":\"m\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"testCaseState\",\"exclude\":{\"flags\":[\"COMMENTS\"]},\"include\":{\"pattern\":\"\"},\"size\":2,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Testrun state\",\"row\":true}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"Count\":\"#629E51\"}}}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\n  \"index\": \"collectd*\",\n  \"query\": {\n    \"query_string\": {\n      \"analyze_wildcard\": true,\n      \"query\": \"plugin: df\"\n    }\n  },\n  \"filter\": []\n}"
+        "searchSourceJSON": "{\"index\":\"testreport-*\",\"query\":{\"query_string\":{\"query\":\"harness: teardown\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
   {
-    "_id": "RAM-(MB)2",
+    "_id": "Testcase-duration-ms-(-testreport-)",
     "_type": "visualization",
     "_source": {
-      "title": "RAM (MB)",
-      "visState": "{\n  \"type\": \"line\",\n  \"params\": {\n    \"addLegend\": true,\n    \"addTimeMarker\": true,\n    \"addTooltip\": true,\n    \"defaultYExtents\": false,\n    \"drawLinesBetweenPoints\": true,\n    \"interpolate\": \"linear\",\n    \"radiusRatio\": 9,\n    \"scale\": \"linear\",\n    \"setYExtents\": false,\n    \"shareYAxis\": true,\n    \"showCircles\": false,\n    \"smoothLines\": false,\n    \"times\": [],\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"max\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"MB\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"@timestamp\",\n        \"interval\": \"s\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"type\": \"terms\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"field\": \"type_instance\",\n        \"size\": 5,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "title": "Testcase duration ms ( testreport )",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"line\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"showCircles\":true,\"smoothLines\":false,\"interpolate\":\"linear\",\"scale\":\"linear\",\"drawLinesBetweenPoints\":true,\"radiusRatio\":9,\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"testCaseDuration\",\"customLabel\":\"Testcase duration\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"interval\":\"s\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"Testcase duration\":\"#E24D42\"}}}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\n  \"index\": \"collectd*\",\n  \"query\": {\n    \"query_string\": {\n      \"analyze_wildcard\": true,\n      \"query\": \"plugin: memory\"\n    }\n  },\n  \"filter\": []\n}"
+        "searchSourceJSON": "{\"index\":\"testreport-*\",\"query\":{\"query_string\":{\"query\":\"harness: teardown\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
   {
-    "_id": "SWAP",
+    "_id": "Top-errors-(-testreport-)",
     "_type": "visualization",
     "_source": {
-      "title": "SWAP",
-      "visState": "{\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"params\": {\n        \"field\": \"value\"\n      },\n      \"schema\": \"metric\",\n      \"type\": \"max\"\n    },\n    {\n      \"id\": \"2\",\n      \"params\": {\n        \"customInterval\": \"2h\",\n        \"extended_bounds\": {},\n        \"field\": \"@timestamp\",\n        \"interval\": \"s\",\n        \"min_doc_count\": 1\n      },\n      \"schema\": \"segment\",\n      \"type\": \"date_histogram\"\n    },\n    {\n      \"id\": \"3\",\n      \"params\": {\n        \"field\": \"type_instance\",\n        \"order\": \"desc\",\n        \"orderBy\": \"1\",\n        \"size\": 5\n      },\n      \"schema\": \"group\",\n      \"type\": \"terms\"\n    }\n  ],\n  \"listeners\": {},\n  \"params\": {\n    \"addLegend\": true,\n    \"addTimeMarker\": false,\n    \"addTooltip\": true,\n    \"defaultYExtents\": false,\n    \"drawLinesBetweenPoints\": true,\n    \"interpolate\": \"linear\",\n    \"radiusRatio\": 9,\n    \"scale\": \"linear\",\n    \"setYExtents\": false,\n    \"shareYAxis\": true,\n    \"showCircles\": true,\n    \"smoothLines\": false,\n    \"times\": [],\n    \"yAxis\": {}\n  },\n  \"type\": \"line\"\n}",
+      "title": "Top errors ( testreport )",
+      "visState": "{\"title\":\"Top errors ( testreport )\",\"type\":\"table\",\"params\":{\"perPage\":null,\"showMeticsAtAllLevels\":false,\"showPartialRows\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"title\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Step\"}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"err\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\n  \"index\": \"collectd*\",\n  \"query\": {\n    \"query_string\": {\n      \"analyze_wildcard\": true,\n      \"query\": \"plugin: swap\"\n    }\n  },\n  \"filter\": []\n}"
+        "searchSourceJSON": "{\"index\":\"testreport-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"harness: Step\"}},\"filter\":[]}"
       }
     }
   },
   {
-    "_id": "Load",
+    "_id": "Count-failed-(-testreport-)",
     "_type": "visualization",
     "_source": {
-      "title": "Load",
-      "visState": "{\n  \"type\": \"line\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"showCircles\": false,\n    \"smoothLines\": false,\n    \"interpolate\": \"linear\",\n    \"scale\": \"linear\",\n    \"drawLinesBetweenPoints\": true,\n    \"radiusRatio\": 9,\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"defaultYExtents\": false,\n    \"setYExtents\": false,\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"avg\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"longterm\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"avg\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"midterm\"\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"type\": \"avg\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"shortterm\"\n      }\n    },\n    {\n      \"id\": \"4\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"@timestamp\",\n        \"interval\": \"auto\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "title": "Count failed ( testreport )",
+      "visState": "{\n  \"title\": \"New Visualization\",\n  \"type\": \"metric\",\n  \"params\": {\n    \"handleNoResults\": true,\n    \"fontSize\": \"38\"\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"customLabel\": \"Count failed\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "uiStateJSON": "{\n  \"vis\": {\n    \"colors\": \"#629E51\"\n  }\n}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\n  \"index\": \"collectd*\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"plugin: load\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+        "searchSourceJSON": "{\n  \"index\": \"testreport-*\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"harness: teardown AND testCaseState: failed\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
       }
     }
   },
   {
-    "_id": "Ping",
+    "_id": "Tags-(-testreport-)",
     "_type": "visualization",
     "_source": {
-      "title": "Ping",
-      "visState": "{\n  \"type\": \"line\",\n  \"params\": {\n    \"addLegend\": true,\n    \"addTimeMarker\": false,\n    \"addTooltip\": true,\n    \"defaultYExtents\": false,\n    \"drawLinesBetweenPoints\": true,\n    \"interpolate\": \"linear\",\n    \"radiusRatio\": 9,\n    \"scale\": \"linear\",\n    \"setYExtents\": false,\n    \"shareYAxis\": true,\n    \"showCircles\": false,\n    \"smoothLines\": false,\n    \"times\": [],\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"avg\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"value\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"@timestamp\",\n        \"interval\": \"s\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"type\": \"filters\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"filters\": [\n          {\n            \"input\": {\n              \"query\": {\n                \"query_string\": {\n                  \"analyze_wildcard\": true,\n                  \"query\": \"collectd_type: ping\"\n                }\n              }\n            }\n          },\n          {\n            \"input\": {\n              \"query\": {\n                \"query_string\": {\n                  \"analyze_wildcard\": true,\n                  \"query\": \"analyze_wildcard: true\"\n                }\n              }\n            }\n          }\n        ]\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "title": "Tags ( testreport )",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"table\",\"params\":{\"perPage\":null,\"showMeticsAtAllLevels\":false,\"showPartialRows\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"tags\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\n  \"index\": \"collectd*\",\n  \"query\": {\n    \"query_string\": {\n      \"analyze_wildcard\": true,\n      \"query\": \"*\"\n    }\n  },\n  \"filter\": []\n}"
+        "searchSourceJSON": "{\"index\":\"testreport-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Count-passed-(-testreport-)",
+    "_type": "visualization",
+    "_source": {
+      "title": "Count passed ( testreport )",
+      "visState": "{\"title\":\"Count failed ( testreport )\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":\"38\"},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Count passed\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"testreport-*\",\"query\":{\"query_string\":{\"query\":\"harness: teardown AND testCaseState: passed\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Threads-by-Sample-(-smartmeter-)",
+    "_type": "visualization",
+    "_source": {
+      "title": "Threads by Sample ( smartmeter )",
+      "visState": "{\"title\":\"Threads by Sample ( smartmeter )\",\"type\":\"line\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"showCircles\":true,\"smoothLines\":false,\"interpolate\":\"linear\",\"scale\":\"linear\",\"drawLinesBetweenPoints\":true,\"radiusRatio\":9,\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"GrpThreads\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"interval\":\"m\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"SampleLabel\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"smartmeter-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   }
