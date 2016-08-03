@@ -1,35 +1,18 @@
 [
   {
-    "_id": "Testreport",
-    "_type": "dashboard",
-    "_source": {
-      "title": "Testreport",
-      "hits": 0,
-      "description": "",
-      "panelsJSON": "[{\"col\":1,\"id\":\"Steps-(-testreport-)\",\"panelIndex\":1,\"row\":6,\"size_x\":9,\"size_y\":5,\"type\":\"visualization\"},{\"col\":7,\"id\":\"Passed-slash-Failed-TC-(-testreport-)\",\"panelIndex\":3,\"row\":3,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Testcase-duration-ms-(-testreport-)\",\"panelIndex\":4,\"row\":1,\"size_x\":6,\"size_y\":5,\"type\":\"visualization\"},{\"col\":10,\"id\":\"Tags-(-testreport-)\",\"panelIndex\":5,\"row\":6,\"size_x\":3,\"size_y\":5,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Top-errors-(-testreport-)\",\"panelIndex\":6,\"row\":11,\"size_x\":12,\"size_y\":5,\"type\":\"visualization\"},{\"id\":\"Count-passed-(-testreport-)\",\"type\":\"visualization\",\"panelIndex\":7,\"size_x\":3,\"size_y\":2,\"col\":7,\"row\":1},{\"id\":\"Count-failed-(-testreport-)\",\"type\":\"visualization\",\"panelIndex\":8,\"size_x\":3,\"size_y\":2,\"col\":10,\"row\":1}]",
-      "optionsJSON": "{\"darkTheme\":true}",
-      "uiStateJSON": "{}",
-      "version": 1,
-      "timeRestore": false,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
-      }
-    }
-  },
-  {
     "_id": "Smartmeter",
     "_type": "dashboard",
     "_source": {
       "title": "Smartmeter",
       "hits": 0,
       "description": "",
-      "panelsJSON": "[{\"col\":3,\"id\":\"Errors-(-smartmeter-)\",\"panelIndex\":2,\"row\":1,\"size_x\":2,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Transactions-(-smartmeter-)\",\"panelIndex\":12,\"row\":1,\"size_x\":2,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Response-time-by-Samples-(-smartmeter-)\",\"panelIndex\":13,\"row\":6,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Status-Code-(-smartmeter-)\",\"panelIndex\":14,\"row\":9,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Success-transaction-(-smartmeter-)\",\"panelIndex\":15,\"row\":12,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Threads-by-Sample-(-smartmeter-)\",\"panelIndex\":16,\"row\":3,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"id\":\"Assertations-(-smartmeter-)\",\"type\":\"visualization\",\"panelIndex\":17,\"size_x\":6,\"size_y\":4,\"col\":7,\"row\":9},{\"id\":\"Failure-Assertations-(-smartmeter-)\",\"type\":\"visualization\",\"panelIndex\":18,\"size_x\":6,\"size_y\":4,\"col\":7,\"row\":13},{\"id\":\"Overview-per-Samples-(-smartmeter-)\",\"type\":\"visualization\",\"panelIndex\":19,\"size_x\":6,\"size_y\":6,\"col\":7,\"row\":3},{\"id\":\"Response-Code-(-smartmeter-)\",\"type\":\"visualization\",\"panelIndex\":20,\"size_x\":6,\"size_y\":2,\"col\":7,\"row\":1},{\"id\":\"Response-Message-(-smartmeter-)\",\"type\":\"visualization\",\"panelIndex\":21,\"size_x\":6,\"size_y\":3,\"col\":7,\"row\":17},{\"id\":\"Target-URL-(-smartmeter-)\",\"type\":\"visualization\",\"panelIndex\":22,\"size_x\":6,\"size_y\":4,\"col\":7,\"row\":20}]",
-      "optionsJSON": "{\"darkTheme\":true}",
-      "uiStateJSON": "{\"P-22\":{\"spy\":{\"mode\":{\"name\":null,\"fill\":false}}}}",
+      "panelsJSON": "[{\"col\":11,\"id\":\"Errors-(-smartmeter-)\",\"panelIndex\":2,\"row\":1,\"size_x\":2,\"size_y\":2,\"type\":\"visualization\"},{\"col\":9,\"id\":\"Transactions-(-smartmeter-)\",\"panelIndex\":12,\"row\":1,\"size_x\":2,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Response-time-by-Samples-(-smartmeter-)\",\"panelIndex\":13,\"row\":9,\"size_x\":8,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Status-Code-(-smartmeter-)\",\"panelIndex\":14,\"row\":12,\"size_x\":8,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Success-transaction-(-smartmeter-)\",\"panelIndex\":15,\"row\":15,\"size_x\":8,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Threads-by-Sample-(-smartmeter-)\",\"panelIndex\":16,\"row\":18,\"size_x\":8,\"size_y\":3,\"type\":\"visualization\"},{\"col\":9,\"id\":\"Assertations-(-smartmeter-)\",\"panelIndex\":17,\"row\":5,\"size_x\":4,\"size_y\":4,\"type\":\"visualization\"},{\"col\":9,\"id\":\"Failure-Assertations-(-smartmeter-)\",\"panelIndex\":18,\"row\":9,\"size_x\":4,\"size_y\":4,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Overview-per-Samples-(-smartmeter-)\",\"panelIndex\":19,\"row\":1,\"size_x\":8,\"size_y\":6,\"type\":\"visualization\"},{\"col\":9,\"id\":\"Response-Code-(-smartmeter-)\",\"panelIndex\":20,\"row\":3,\"size_x\":4,\"size_y\":2,\"type\":\"visualization\"},{\"col\":9,\"id\":\"Response-Message-(-smartmeter-)\",\"panelIndex\":21,\"row\":13,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"col\":9,\"id\":\"Target-URL-(-smartmeter-)\",\"panelIndex\":22,\"row\":16,\"size_x\":4,\"size_y\":4,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Threads-(-smartmeter-)\",\"panelIndex\":24,\"row\":7,\"size_x\":8,\"size_y\":2,\"type\":\"visualization\"}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{}",
       "version": 1,
       "timeRestore": false,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"SampleLabel: cash*\"}}}]}"
       }
     }
   }
